@@ -45,6 +45,14 @@ void freadnames(ifstream &f,char *list [])
 	char x[200];
 
 	int i = 0;
+	
+	string line;
+
+	while(getline(f, line)){
+		x = line;
+		strcpy(list[i], line);
+		i = i + 1;
+	}
 
 	// write a while loop to reads string form the file and put it in x till the end file
 		// inside the loop allocate the dynamic array for list[i]
@@ -61,7 +69,7 @@ void fwritenames_reverse(ofstream &f,char *list [])
 
 	for(int j = i-1; j >= 0 ; --j)
 	{
-		// your code is here
+		cout << list[j] << endl;
 	}
 }
 void freenames(char *list [])
@@ -71,7 +79,3 @@ void freenames(char *list [])
 		delete [] list[i];;
 	}
 }
-
-
-
-
